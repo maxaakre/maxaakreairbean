@@ -4,7 +4,7 @@ const app = express();
 const path = require("path");
 
 const beansRouter = require("./routes/beans");
-const PORT = 5050;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -17,4 +17,4 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.listen(5050, () => console.log(`Server started on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
